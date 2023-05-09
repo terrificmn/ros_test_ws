@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/sgtubunamr/catkin_ws/devel/include/**",
+        "/home/sgtubunamr/catkin_fund_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/sgtubunamr/catkin_ws/src/camera_pub_cpp/include/**",
+        "/home/sgtubunamr/catkin_ws/src/follow_waypoints/include/**",
+        "/home/sgtubunamr/catkin_ws/src/follower_cmd_pub/include/**",
+        "/home/sgtubunamr/catkin_ws/src/send_pose/include/**",
+        "/home/sgtubunamr/catkin_ws/src/mqtt_pubsub/send_pose_mqtt/include/**",
+        "/home/sgtubunamr/catkin_ws/src/mqtt_pubsub/sub_loc_mqtt/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

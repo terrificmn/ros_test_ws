@@ -1,0 +1,11 @@
+<launch>
+    <!-- 노드 핸들러를 일반적으로 생성했을 경우에는 node 바깥쪽으로 마치 (root 영역처럼) 올려놔야 파라미터를 잘 받을 수 있다 -->
+    <!-- 단, 노드 핸들러를 private 처럼 만들었다면 nh("~") , 노드 안으로 파라미터를 중첩시켜 넣어줘야 한다  -->
+    <param name="test_param1" type="string" value="test string"/>
+    <param name="test_param2" type="string" value="hello world"/>
+    <param name="test_param3" type="bool" value="true"/>
+    
+    <node name="test_nh" pkg="test_nh" type="test_nh_node" output="screen">
+        
+    </node>
+</launch>

@@ -1,0 +1,13 @@
+<root main_tree_to_execute = "MainTree" >
+    <BehaviorTree ID="MainTree">
+        <Sequence name="battery_allert">
+            <Fallback>
+                <CheckBattery/>
+                <ForceFailure>
+                    <SaySomething message="battery level LOW" />
+                </ForceFailure>
+            </Fallback>
+                <SaySomething message="battery OK" />
+        </Sequence>
+    </BehaviorTree>
+</root>

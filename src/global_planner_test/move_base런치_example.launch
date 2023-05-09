@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="cmd_vel_topic" default="/cmd_vel" />
+  <arg name="odom_topic" default="odom" />
+  <arg name="move_forward_only" default="false" />
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    
+    <!-- Trajectory Rollout planner 가 local_costmap planner 실행 // DWA를 설정안했음 -->
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> 
+    
+    <!-- glbalPlanner 추가 테스트 용 -->
+    <param name="base_global_planner" value="global_planner/GlobalPlannerTest"/>
+    <!-- localPlanner 추가 테스트 용 -->
+    <!-- <param name="base_local_planner" value="local_planner/LocalPlannerTest" /> --> 
+
+    <rosparam file="$(find p150_move_base)/config/test_param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find p150_move_base)/config/test_param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find p150_move_base)/config/test_param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find p150_move_base)/config/test_param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find p150_move_base)/config/test_param/move_base_params.yaml" command="load" />
+    <rosparam file="$(find p150_move_base)/config/test_param/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find p150_move_base)/config/test_param/navfn_global_planner_params.yaml" command="load" />
+  
+    <!-- if ekf node executed-->
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)" />
+    <!-- <remap from="odom" to="/odometry/filtered"/> -->
+    <remap from="odom" to="$(arg odom_topic)"/>
+  </node>
+</launch>
