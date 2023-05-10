@@ -1,0 +1,5 @@
+vertical_motor:
+  pwm_value: 330
+
+horizontal_motor:
+  pwm_value: 200

@@ -1,0 +1,4 @@
+<launch>
+	<rosparam file="$(find yaml_ros_param)/params/parameters.yaml" command="load"/>
+	<node name="yaml_ros_param" pkg="yaml_ros_param" type="yaml_ros_param" output="screen"/>
+</launch>
